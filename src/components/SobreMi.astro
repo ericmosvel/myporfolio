@@ -1,0 +1,47 @@
+---
+const personalImageAlt = "Eric Mosvel"
+import ProfileCheck from './icons/ProfileCheck.astro'
+---
+
+
+
+<section
+  id="sobremi"
+  data-section="sobremi"
+  class="section scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+
+  <h2 
+    class="flex items-center mb-6 text-3xl 
+            font-semibold gap-x-3 text-black/80 
+            dark:text-white">
+            <ProfileCheck class="size-8" />
+            Sobre Mi
+  </h2> 
+  <div class="flex flex-col gap-y-16"></div>
+
+  <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+    <div class="[&>p]:mb-4 [&>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-mono text-pretty order-2 md:order-1">
+
+      <p>
+        Mi nombre es Eric Mosvel. Inicié haciendo blogs como pasa tiempo. Luego de capacitarme en desarrollo web, 
+        <strong>hoy ayudo a personas a construir su presencia online, entre las cueles están: profesionales, emprendedores y pymes.</strong>
+      </p>
+
+      <p>
+        Algunos de mis éxitos, incluyen desarrollar una <strong>aplicación web</strong> en vue para visualizar información
+        financiera básica de las compañías del SP500, consultando una API; su repositorio puede ser hallado en ==> <strong><a role="link" target="_blank" href="https://github.com/ericmosvel/finzboard">Github</a></strong>.
+      </p>
+       <p>
+        Además de participar activamente en la comunidad, la maquina del branding, también realizo proyectos personales y los comparto en mi GitHub.  
+       </p>
+    </div>
+
+    <img width="200" height="200"  src="/mek.jpg" alt={personalImageAlt} class="order-1 object-cover w-64 md:order-2 rotate-3 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 darK:ring-white/20" style="object-position: 50% 50%;">
+
+  </article>
+
+
+
+  
+
+</section>

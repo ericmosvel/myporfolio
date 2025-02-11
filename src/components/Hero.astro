@@ -1,0 +1,42 @@
+---
+import Badge from "./Badge.astro"
+import SocialPill from "./SocialPill.astro"
+import MailIcon from "./icons/Mail.astro"
+import LinkedInIcon from "./icons/LinkedIn.astro"
+
+---
+
+
+<section class="section py-16 md:py-36 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+    <div class="flex flex-nowrap items-center gap-4 mb-4">
+        <img 
+            class="rounded-full size-12" 
+            src="https://i.ibb.co/RGkHFqBN/me3-cuadro.jpg" 
+            alt="mosveldev">
+            <a 
+                href="https://www.linkedin.com/in/ericmosquera/" 
+                target="_blank" 
+                rel="noopener" 
+                >
+                <Badge>Open to Work</Badge>        
+            </a> 
+    </div>      
+    <h1 class=" text-black/80 dark:text-gray-100 text-5xl font-bold flex flex-row gap-x-4 pb-5">
+        Hey, Soy Mosveldev 
+    </h1>
+    <p class="text-xl opacity-80 text-wrap md:w-3/4">
+        +5 años de experiencia. <strong class="text-[#facc15]">Desarrollador Web</strong>. Te ayudo a crear soluciones web ganadoras. 
+        Vende tus productos o servicios en la web y escala tu negocio.  
+    </p>
+    <nav class="flex flex-wrap gap-4 mt-8">
+        <SocialPill href="mailto:miduga@gmail.com">
+            <MailIcon class="size-6" />
+            Escríbeme
+        </SocialPill>
+        <SocialPill href="https://www.linkedin.com/in/ericmosquera/">
+            <LinkedInIcon class="size-6" />
+            LinkedIn
+        </SocialPill>
+
+    </nav>
+</section>
