@@ -1,0 +1,99 @@
+---
+import Checkicon from "./icons/Check.astro";
+
+const INCLUDES = {
+  LANDING: {
+    a:"Copywriting with a focus on conversions",    
+    b:"SEO-ready structure",
+    c:"Integration with analytics & automation tools",
+  },
+  AUTOMATION: {
+    a:"N8N Automation",
+    b:"API integrations",
+    c:"Scalable architecture",
+    d:"Fast and optimized performance ",
+  },
+  CONTENT: {
+    a:"Content structure planning (landing pages, microsites) ",
+    b:"Workflow automation (CRM integration) ",
+    c:"Guidance on digital growth strategies",    
+  },
+};
+
+
+const SERVICES = [
+  {
+    title: "Landing Page",
+    description:
+      "High-converting landing pages and webs designed to generate leads and sales. Built with modern tools like Astro, WordPress-headless or (Bricks, Elementor).",
+    image: "/projects/rocket2.svg",
+    services: [INCLUDES.LANDING],
+  },
+  {
+    title: "Micro-Apps",
+    description:
+      "Tailored web apps built with modern frameworks such as Next.js, React, or Astro. Perfect for businesses that need more than just a website.",
+    image: "/projects/app.svg",
+    services: [INCLUDES.AUTOMATION],
+  },
+  {
+    title: "Content Strategy",
+    description:
+      "I help you plan content structures, integrate automations, and set up technical SEO so your site works smarter, not harder.",
+    image: "/projects/social.svg",
+    services: [INCLUDES.CONTENT],
+  },
+];
+---
+
+<section
+  id="services"
+  data-section="services"
+  class="scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl pb-16"
+>
+  <h2
+    class="flex items-center mb-6 text-3xl
+                font-semibold gap-x-3 text-black/80
+                dark:text-white py-5"
+  >
+    <Checkicon class="size-8" />
+    Services
+  </h2>
+
+  <div class="grid md:grid-cols-3 grid-cols-1 md:gap-4 w-full gap-8">
+    {
+      SERVICES.map(({ title, description, services }) => (
+        <article class="border border-yellow-400 rounded-lg p-6">
+          <div class="p-2 text-center">
+            <h3 class="text-2xl font-bold text-gray-600">{title}</h3>
+          </div>          
+
+          <div class="w-full md:max-x-lg">
+            <div class="flex flex-wrap mt-2">
+                <p class="mt-2 text-gray-700 dark:text-gray-400">
+                    {description}
+                </p>
+                <ul class="mt-4 space-y-2">
+                    {services.map((item) => (
+                    <li class="flex items-center gap-x-2">
+                        <Checkicon class="size-5 mt-1 text-yellow-500 shrink-0" />
+                        <span class="text-gray-700 dark:text-gray-400">{item.a}</span>
+                    </li>
+                    <li class="flex items-center gap-x-2">
+                        <Checkicon class="size-5 mt-1 text-yellow-500 shrink-0" />
+                        <span class="text-gray-700 dark:text-gray-400">{item.b}</span>
+                    </li>
+                    <li class="flex items-center gap-x-2">
+                        <Checkicon class="size-5 mt-1 text-yellow-500 shrink-0" />
+                        <span class="text-gray-700 dark:text-gray-400">{item.c}</span>
+                    </li>                   
+                    ))}
+                </ul>
+
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

@@ -1,15 +1,15 @@
 ---
-import Code from './icons/Code.astro'
-import Tailwind from './icons/Tailwind.astro'
-import Wordpress from './icons/Wordpress.astro'
-import NextJS from './icons/NextJS.astro'
-import Elementor from './icons/Elementor.astro'
-import LinkButton from './LinkButton.astro'
-import GitHub from './icons/GitHub.astro'
-import Link from './icons/Link.astro'
+import Code from "./icons/Code.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Wordpress from "./icons/Wordpress.astro";
+import NextJS from "./icons/NextJS.astro";
+import Elementor from "./icons/Elementor.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+import Typescript from "./icons/Typescript.astro";
 
-
-const TAGS = {  
+const TAGS = {
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
@@ -29,104 +29,116 @@ const TAGS = {
     name: "Elementor",
     class: "bg-[#FF7BE5] text-[#92003B]",
     icon: Elementor,
-  },  
-}
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-white text-[#444140]",
+    icon: Typescript,
+  },
+};
 
 const PROJECTS = [
-{
+  {
+    title: "Prompt Factory",
+    description:
+      "A web app that saves time by generating study guides and ready-to-use prompts for any LLM.",
+    link: "https://prompfactory.netlify.app/",
+    image: "/projects/svgl-prompt.png",
+    tags: [TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
     title: "MaitaServices - Landing Page para servicios financieros",
     description:
-      "Sitio de adquisición de leads a través de CTA. Hubo especial enfasis en el copy. Creado desde cero con Wordpress y el tema Bricks Builder",
-    link: "https://maitaservices.com/",    
-    image: "/projects/svgm.webp",
+      "Lead-generation website with a strong focus on persuasive copywriting. Designed and developed from scratch.",
+    link: "https://maitaservices.com/",
+    image: "/projects/maite-svgl.png",
     tags: [TAGS.WP],
   },
   {
     title: "Lina Aguilar - Landing Page para servicios migratorios",
     description:
-      "Permite al cliente ser contactado por prospectos que desean solucionar su situación migratoria en EE.UU. Creado desde cero con Wordpress y Elementor Pro.",
-    link: "https://linaaguilar.com/",    
+      "A landing page that connects immigration service providers with potential clients. Fully designed and developed from scratch.",
+    link: "https://linaaguilar.com/",
     image: "/projects/svgl.webp",
     tags: [TAGS.ELEMENTOR],
   },
   {
-    title: "Eventos R&M - Aplicación web que consulta la API de Ricky and Morty",
+    title: "Personajes de Ricky and Morty",
     description:
-      "Sitio web donde podrás consultar todos los personajes de la divertida serie Ricky and Morty. Creada desde cero con Next JS y Tailwind CSS.",
+      "A fun site where users can explore all characters from the Rick & Morty series. Built from scratch using Next.js and Tailwind.",
     github: "https://github.com/ericmosvel/events_app",
     link: "https://rick-and-morty-events.netlify.app/",
     image: "/projects/svgev.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
-]
-
+];
 ---
 
-
-<section 
+<section
   id="proyectos"
   data-section="Experience"
-  class="section scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl md:py-24 py-24">
-  <h2 
-    class="flex items-center mb-6 text-3xl 
-            font-semibold gap-x-3 text-black/80 
-            dark:text-white">
-            <Code class="size-7" />
-            Proyectos
-  </h2> 
+  class="section scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl md:py-24 py-24"
+>
+  <h2
+    class="flex items-center mb-6 text-3xl
+            font-semibold gap-x-3 text-black/80
+            dark:text-white"
+  >
+    <Code class="size-7" />
+    Projects
+  </h2>
   <div class="flex flex-col gap-y-16">
     {
-      PROJECTS.map(({image, title, description, link, github, tags}) => (
+      PROJECTS.map(({ image, title, description, link, github, tags }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2">
             <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-              <img src={image} alt="cover de proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy">
+              <img
+                src={image}
+                alt="cover de proyecto"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+              />
             </div>
           </div>
 
           <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />                    
-                    {tag.name}
-                  </span>
-                </li>                 
-              ))}
-            </ul>
+            <h3 class="text-2xl font-bold text-gray-800">{title}</h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-            <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-                  
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>                
-               )}
-            </footer>  
-
-          </div>
-
+              <div class="mt-2 text-gray-700 dark:text-gray-400">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {github && (
+                  <LinkButton href={github}>
+                    <GitHub class="size-6" />
+                    Code
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    Preview
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
           </div>
         </article>
-
       ))
     }
-      
-
   </div>
 </section>
