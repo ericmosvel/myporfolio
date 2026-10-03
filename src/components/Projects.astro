@@ -8,6 +8,7 @@ import LinkButton from "./LinkButton.astro";
 import GitHub from "./icons/GitHub.astro";
 import Link from "./icons/Link.astro";
 import Typescript from "./icons/Typescript.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
 
 const TAGS = {
   TAILWIND: {
@@ -35,9 +36,22 @@ const TAGS = {
     class: "bg-white text-[#444140]",
     icon: Typescript,
   },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#222324] text-white",
+    icon: AstroIcon,
+  }
 };
 
 const PROJECTS = [
+  {
+    title: "TechosPro",
+    description:
+      "Calculate the cost of your roof in 3 minutes.",
+    link: "https://techospro.vercel.app/",
+    image: "/projects/techos-astro-mockup-better.webp",
+    tags: [TAGS.TYPESCRIPT, TAGS.ASTRO],
+  },
   {
     title: "Prompt Factory",
     description:
